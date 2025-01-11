@@ -2,6 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:neev/firebase_options.dart';
+import 'package:neev/screens/goal_screen.dart';
+import 'package:neev/screens/learn_screen.dart';
+import 'package:neev/screens/profile_screen.dart';
+import 'package:neev/screens/signin_screen.dart';
+import 'package:neev/screens/signup_screen.dart';
+import 'package:neev/screens/starting_screen.dart';
 import 'package:neev/themes/my_theme.dart';
 import 'package:neev/providers/chat_provider.dart';
 import 'package:neev/providers/settings_provider.dart';
@@ -13,7 +19,7 @@ void main() async {
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
 
   await ChatProvider.initHive();
   await dotenv.load(fileName: ".env");
@@ -53,7 +59,7 @@ class _MyAppState extends State<MyApp> {
       theme:
           context.watch<SettingsProvider>().isDarkMode ? darkTheme : lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const GoalScreen(),
     );
   }
 }

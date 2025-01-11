@@ -21,7 +21,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   File? file;
   String userImage = '';
-  String userName = 'Aayush';
+  String userName = 'Abhay';
   final ImagePicker _picker = ImagePicker();
 
   // pick an image
@@ -77,15 +77,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: const Text('Profile'),
         centerTitle: true,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        actions: [
-          IconButton(
-            // icon: const Icon(Icons.check),
-            icon: const Icon(CupertinoIcons.checkmark),
-            onPressed: () {
-              // save data
-            },
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     // icon: const Icon(Icons.check),
+        //     icon: const Icon(CupertinoIcons.checkmark),
+        //     onPressed: () {
+        //       // save data
+        //     },
+        //   ),
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -111,7 +111,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               // user name
               Text(
                 userName,
-                style: Theme.of(context).textTheme.titleLarge,
+                // style: Theme.of(context).textTheme.titleLarge,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
 
               const SizedBox(height: 40.0),

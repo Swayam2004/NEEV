@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:neev/constants/colors.dart';
 import 'package:neev/providers/chat_provider.dart';
 import 'package:neev/screens/chat_history_screen.dart';
 import 'package:neev/screens/chat_screen.dart';
@@ -19,6 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
     const ChatHistoryScreen(),
     const ChatScreen(),
     const ProfileScreen(),
+    const ChatScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -33,29 +36,52 @@ class _HomeScreenState extends State<HomeScreen> {
               chatProvider.setCurrentIndex(newIndex: index);
             },
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: chatProvider.currentIndex,
-            elevation: 0,
-            selectedItemColor: Theme.of(context).colorScheme.primary,
-            onTap: (index) {
-              chatProvider.setCurrentIndex(newIndex: index);
-              chatProvider.pageController.jumpToPage(index);
-            },
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.history),
-                // icon: Icon(CupertinoIcons.timelapse),
-                label: 'Chat History',
+          bottomNavigationBar: Container(
+            decoration: const BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: AppColor.primaryColor,
+                blurRadius: 10,
+                offset: Offset(0, 0),
+                spreadRadius: 0,
               ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.chat_bubble),
-                label: 'Chat',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.person),
-                label: 'Profile',
-              ),
-            ],
+            ]),
+            child: BottomNavigationBar(
+              currentIndex: chatProvider.currentIndex,
+              elevation: 10,
+              selectedItemColor: Theme.of(context).colorScheme.primary,
+              type: BottomNavigationBarType.fixed,
+              onTap: (index) {
+                chatProvider.setCurrentIndex(newIndex: index);
+                chatProvider.pageController.jumpToPage(index);
+              },
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.book),
+                  activeIcon: Icon(CupertinoIcons.book_fill),
+                  label: 'Learn',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.gamepad_outlined),
+                  activeIcon: Icon(Icons.gamepad),
+                  label: 'My Goals',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.money_dollar_circle),
+                  activeIcon: Icon(CupertinoIcons.money_dollar_circle_fill),
+                  label: 'Tools',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.paperplane),
+                  activeIcon: Icon(CupertinoIcons.paperplane_fill),
+                  label: 'My Plans',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.person),
+                  activeIcon: Icon(CupertinoIcons.person_fill),
+                  label: 'Connect',
+                ),
+              ],
+            ),
           ),
         );
       },
