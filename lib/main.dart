@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:neev/firebase_options.dart';
 import 'package:neev/themes/my_theme.dart';
 import 'package:neev/providers/chat_provider.dart';
 import 'package:neev/providers/settings_provider.dart';
@@ -8,6 +10,10 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
 
   await ChatProvider.initHive();
   await dotenv.load(fileName: ".env");
