@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:neev/constants/colors.dart';
 
 class ToolsScreen extends StatelessWidget {
@@ -30,23 +31,26 @@ class ToolsScreen extends StatelessWidget {
               ]),
         ),
         actions: [
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  spreadRadius: 2,
-                  blurRadius: 4,
-                  offset: const Offset(-4, 4),
+          GestureDetector(
+            onLongPress: () => Get.toNamed('/profile'),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    spreadRadius: 2,
+                    blurRadius: 4,
+                    offset: const Offset(-4, 4),
+                  ),
+                ],
+              ),
+              child: const Padding(
+                padding: EdgeInsets.only(right: 16.0),
+                child: CircleAvatar(
+                  radius: 24,
+                  backgroundImage: AssetImage('assets/images/user_icon.png'),
                 ),
-              ],
-            ),
-            child: const Padding(
-              padding: EdgeInsets.only(right: 16.0),
-              child: CircleAvatar(
-                radius: 24,
-                backgroundImage: AssetImage('assets/images/user_icon.png'),
               ),
             ),
           ),
@@ -96,6 +100,14 @@ class ToolsScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Show dialog to add new loan or asset
+          Get.toNamed('/chatbot');
+        },
+        backgroundColor: const Color(0xFFBA68C8),
+        child: const Icon(Icons.chat, color: Colors.white),
       ),
     );
   }

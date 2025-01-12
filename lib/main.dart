@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
       theme:
           context.watch<SettingsProvider>().isDarkMode ? darkTheme : lightTheme,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/info',
+      initialRoute: '/',
       getPages: AppRoutes.routes,
     );
   }

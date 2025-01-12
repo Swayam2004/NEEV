@@ -289,7 +289,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
     Navigator.pushNamed(
       context,
-      '/quiz-result',
+      '/congrats',
       arguments: {
         'score': score,
         'total': questions.length,

@@ -32,7 +32,7 @@ class SignupScreen extends StatelessWidget {
               ]),
         ),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: SafeArea(

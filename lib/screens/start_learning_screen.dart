@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:neev/constants/colors.dart';
 
 class StartLearningScreen extends StatelessWidget {
@@ -104,7 +105,7 @@ class StartLearningScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => Get.offAllNamed('/quiz'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFFBA68C8),
                             padding: const EdgeInsets.symmetric(

@@ -1,10 +1,14 @@
 import 'package:get/get.dart';
+import 'package:neev/screens/chat_screen.dart';
 import 'package:neev/screens/congrats_screen.dart';
+import 'package:neev/screens/connect_screen.dart';
 import 'package:neev/screens/getting_started_screen.dart';
 import 'package:neev/screens/goal_screen.dart';
 import 'package:neev/screens/home_screen.dart';
 import 'package:neev/screens/learn_screen.dart';
+import 'package:neev/screens/my_plans_screen.dart';
 import 'package:neev/screens/otp_screen.dart';
+import 'package:neev/screens/profile_screen.dart';
 import 'package:neev/screens/quiz_screen.dart';
 import 'package:neev/screens/signin_screen.dart';
 import 'package:neev/screens/signup_screen.dart';
@@ -29,5 +33,9 @@ class AppRoutes {
     GetPage(name: '/learn', page: () => const LearnScreen()),
     GetPage(name: '/quiz', page: () => const QuizScreen()),
     GetPage(name: '/congrats', page: () => const CongratsScreen()),
+    GetPage(name: '/chatbot', page: () => const ChatScreen()),
+    GetPage(name: '/profile', page: () => const ProfileScreen()),
+    GetPage(name: '/plans', page: () => const MyPlansScreen()),
+    GetPage(name: '/connect', page: () => const ConnectScreen()),
   ];
 }

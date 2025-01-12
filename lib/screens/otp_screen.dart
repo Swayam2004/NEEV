@@ -18,9 +18,11 @@ class _OtpScreenState extends State<OtpScreen> {
   void _handleOTPVerification() {
     if (_otpController.text.length == 6) {
       if (widget.source == 'signup') {
-        Get.toNamed('/info');
+        Get.offAllNamed('/info');
       } else if (widget.source == 'signin') {
         Get.offAllNamed('/home');
+      } else {
+        Get.offAllNamed('/info');
       }
     }
   }
@@ -179,9 +181,9 @@ class _OtpScreenState extends State<OtpScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    _otpController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _otpController.dispose(); // Simplified disposal
+  //   super.dispose();
+  // }
 }

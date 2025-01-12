@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:neev/constants/colors.dart';
 import 'package:neev/providers/chat_provider.dart';
-import 'package:neev/screens/chat_history_screen.dart';
 import 'package:neev/screens/chat_screen.dart';
+import 'package:neev/screens/connect_screen.dart';
 import 'package:neev/screens/goal_screen.dart';
 import 'package:neev/screens/learn_screen.dart';
+import 'package:neev/screens/my_plans_screen.dart';
 import 'package:neev/screens/profile_screen.dart';
 import 'package:neev/screens/tool_screen.dart';
 import 'package:provider/provider.dart';
@@ -19,18 +20,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // list of screens
-  // final List<Widget> _screens = [
-  //   const ChatHistoryScreen(),
-  //   const ChatScreen(),
-  //   const ProfileScreen(),
-  // ];
-
   final List<Widget> _screens = [
     const LearnScreen(),
     const GoalScreen(),
     const ToolsScreen(),
-    const ChatScreen(),
-    const ProfileScreen(),
+    const MyPlansScreen(),
+    const ConnectScreen(),
   ];
 
   @override

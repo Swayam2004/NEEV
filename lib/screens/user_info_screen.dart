@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:neev/constants/colors.dart';
 import 'package:neev/widgets/multi_select_dropdown.dart';
 
 class UserInfoScreen extends StatefulWidget {
@@ -141,7 +140,7 @@ class _UserInfoScreenState extends State<UserInfoScreen>
             Tab(text: 'Personal'),
             Tab(text: 'Education'),
             Tab(text: 'Business'),
-            Tab(text: 'Financial'),
+            Tab(text: 'Finance'),
             Tab(text: 'Skills'),
             Tab(text: 'Resources'),
           ],
@@ -516,7 +515,7 @@ class _UserInfoScreenState extends State<UserInfoScreen>
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.resolveWith<Color>(
           (Set<WidgetState> states) {
-            if (states.contains(MaterialState.selected)) {
+            if (states.contains(WidgetState.selected)) {
               return const Color(0xFFBA68C8);
             }
             return Colors.white;
@@ -524,7 +523,7 @@ class _UserInfoScreenState extends State<UserInfoScreen>
         ),
         foregroundColor: WidgetStateProperty.resolveWith<Color>(
           (Set<WidgetState> states) {
-            if (states.contains(MaterialState.selected)) {
+            if (states.contains(WidgetState.selected)) {
               return Colors.white;
             }
             return const Color(0xFFBA68C8);

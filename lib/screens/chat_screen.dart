@@ -55,7 +55,12 @@ class _ChatScreenState extends State<ChatScreen> {
           appBar: AppBar(
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             centerTitle: true,
-            title: const Text('Chat with Gemini'),
+            title: const Text(
+              'Chat with Laxmi',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             actions: [
               if (chatProvider.inChatMessages.isNotEmpty)
                 Padding(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neev/constants/colors.dart';
+import 'package:get/get.dart';
 import 'package:neev/widgets/multi_select_dropdown.dart';
 
 class GoalScreen extends StatefulWidget {
@@ -151,23 +151,26 @@ class _GoalScreenState extends State<GoalScreen> {
           ),
         ),
         actions: [
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  spreadRadius: 2,
-                  blurRadius: 4,
-                  offset: const Offset(-4, 4),
+          GestureDetector(
+            onLongPress: () => Get.toNamed('/profile'),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.1),
+                    spreadRadius: 2,
+                    blurRadius: 4,
+                    offset: const Offset(-4, 4),
+                  ),
+                ],
+              ),
+              child: const Padding(
+                padding: EdgeInsets.only(right: 16.0),
+                child: CircleAvatar(
+                  radius: 24,
+                  backgroundImage: AssetImage('assets/images/user_icon.png'),
                 ),
-              ],
-            ),
-            child: const Padding(
-              padding: EdgeInsets.only(right: 16.0),
-              child: CircleAvatar(
-                radius: 24,
-                backgroundImage: AssetImage('assets/images/user_icon.png'),
               ),
             ),
           ),
@@ -277,6 +280,14 @@ class _GoalScreenState extends State<GoalScreen> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Show dialog to add new loan or asset
+          Get.toNamed('/chatbot');
+        },
+        backgroundColor: const Color(0xFFBA68C8),
+        child: const Icon(Icons.chat, color: Colors.white),
       ),
     );
   }
@@ -474,7 +485,7 @@ class _GoalScreenState extends State<GoalScreen> {
       child: ElevatedButton(
         onPressed: () {
           if (_formKey.currentState!.validate()) {
-            // Handle form submission
+            Get.offAllNamed('/start-learning');
           }
         },
         style: ElevatedButton.styleFrom(
