@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:neev/constants/colors.dart';
 
 class SigninScreen extends StatelessWidget {
@@ -74,7 +75,7 @@ class SigninScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Get.offAllNamed('/otp', arguments: {'source': 'signin'}),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFBA68C8),
                       padding: const EdgeInsets.symmetric(vertical: 16),

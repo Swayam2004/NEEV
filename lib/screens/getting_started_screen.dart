@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:neev/constants/colors.dart';
 
 class GettingStarted extends StatelessWidget {
@@ -75,7 +77,7 @@ class GettingStarted extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     // Add navigation logic here
-                    Navigator.pushNamed(context, '/home');
+                    Get.offAllNamed('/signup');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFBA68C8),
@@ -98,10 +100,10 @@ class GettingStarted extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text.rich(
-                TextSpan(
+              RichText(
+                text: TextSpan(
                   children: [
-                    TextSpan(
+                    const TextSpan(
                       text: 'Already a member? ',
                       style: TextStyle(
                         color: Colors.black,
@@ -113,18 +115,20 @@ class GettingStarted extends StatelessWidget {
                     ),
                     TextSpan(
                       text: 'Sign In',
-                      style: TextStyle(
-                        color: Colors.black,
+                      style: const TextStyle(
+                        color: Color(0xFFBA68C8),
                         fontSize: 15,
                         fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
+                        decorationColor: Color(0xFFBA68C8),
                         letterSpacing: -0.75,
                       ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => Get.offAllNamed('/signin'),
                     ),
                   ],
                 ),
-                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 48),
             ],
