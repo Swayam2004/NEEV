@@ -1,16 +1,66 @@
-# test_app
+# NEEV - Financial Empowerment Platform
 
-A new Flutter project.
+<p align="center">
+  <img src="assets/logos/splash.png" alt="NEEV Logo" width="200"/>
+</p>
 
-## Getting Started
+<div align="center">
+    <h3>Your Smart Business Planning Assistant</h3>
+    <p>Empowering Rural people with AI-driven guidance and tools</p>
+</div>
 
-This project is a starting point for a Flutter application.
+## 🎯 Overview
 
-A few resources to get you started if this is your first Flutter project:
+NEEV empowers entrepreneurs through financial literacy and business planning. Built with Flutter and Firebase.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## ⚡ Quick Start
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+# Clone repository
+git clone https://github.com/yourusername/neev.git
+```
+
+# Install dependencies
+```bash
+cd neev
+flutter pub get
+```
+# Run app
+```bash
+flutter run
+```
+
+## 🛠️ Tech Stack
+- **Frontend:** Flutter/Dart
+- **State Management:** GetX
+- **Backend:** Firebase
+- **Local Storage:** Hive
+- **AI Integration:** Google Generative AI
+
+## 📱 Features
+
+### Business Planning
+- Sector selection and analysis
+- Goal setting and tracking
+- AI-powered insights
+- Progress monitoring
+
+### Learning Platform
+- Video tutorials
+- Interactive quizzes
+- Achievement tracking
+- Certification system
+
+### Financial Tools
+- Savings calculator
+- Loan management
+- Asset tracking
+- Budget planning
+
+### Community Features
+- Business networking
+- Mentor matching
+- Discussion forums
+- Expert connections
+
+<p align="center">Made with ❤️ for needy people</p>
